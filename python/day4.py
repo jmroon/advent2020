@@ -21,6 +21,16 @@ def part1():
     print('Part 1 - valid passports:', valid)
 
 
+def part2():
+    valid = 0
+    with open('./resources/day4_input.txt') as f:
+        lines = f.read()
+        passports = lines.split("\n\n")
+        for passport in passports:
+            valid += validate_passport(passport, True)
+    print('Part 2 - valid passports:', valid)
+
+
 def validate_passport(passport: str, validate_fields: bool) -> bool:
     for field in field_req:
         if field not in passport:
@@ -34,16 +44,6 @@ def validate_passport(passport: str, validate_fields: bool) -> bool:
 
 def validate_field(field: str, value: str) -> bool:
     return field_req[field].match(value)
-
-
-def part2():
-    valid = 0
-    with open('./resources/day4_input.txt') as f:
-        lines = f.read()
-        passports = lines.split("\n\n")
-        for passport in passports:
-            valid += validate_passport(passport, True)
-    print('Part 2 - valid passports:', valid)
 
 
 if __name__ == "__main__":
