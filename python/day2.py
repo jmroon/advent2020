@@ -1,5 +1,5 @@
 def part1():
-    with open('./resources/day1_input.txt') as f:
+    with open('../resources/day1_input.txt') as f:
         data = f.read()
     lines = data.splitlines()
     nums = {int(num) for num in lines}
@@ -10,7 +10,7 @@ def part1():
 
 
 def part2():
-    with open('./resources/day1_input.txt') as f:
+    with open('../resources/day1_input.txt') as f:
         data = f.read()
     lines = data.splitlines()
     nums = {int(num) for num in lines}
