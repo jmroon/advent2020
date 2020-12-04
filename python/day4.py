@@ -1,7 +1,7 @@
 import re
 
 field_req = {
-    'byr': re.compile(r'^(19[2-8][0-9]|199[0-9]|200[0-2])$'),
+    'byr': re.compile(r'^(19[2-9][0-9]|200[0-2])$'),
     'iyr': re.compile(r'^(201[0-9]|2020)$'),
     'eyr': re.compile(r'^(202[0-9]|2030)$'),
     'hgt': re.compile(r'^(1[5-8][0-9]|19[0-3])cm|(59|6[0-9]|7[0-6])in$'),
