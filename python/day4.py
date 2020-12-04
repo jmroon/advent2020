@@ -17,23 +17,24 @@ def part1():
         lines = f.read()
         passports = lines.split("\n\n")
         for passport in passports:
-            valid += validatePassport(passport, False)
+            valid += validate_passport(passport, False)
     print('Part 1 - valid passports:', valid)
-        
 
-def validatePassport(passport: str, validate_fields: bool) -> bool:
+
+def validate_passport(passport: str, validate_fields: bool) -> bool:
     for field in field_req:
         if field not in passport:
             return False
         elif validate_fields:
-            value = passport.split(field + ':')[1].split()[0] # return value after field identifier
-            if not (validateField(field, value)):
+            value = passport.split(field + ':')[1].split()[0]
+            if not (validate_field(field, value)):
                 return False
     return True
 
-def validateField(field: str, value: str) -> bool:
+
+def validate_field(field: str, value: str) -> bool:
     return field_req[field].match(value)
-    pass
+
 
 def part2():
     valid = 0
@@ -41,7 +42,7 @@ def part2():
         lines = f.read()
         passports = lines.split("\n\n")
         for passport in passports:
-            valid += validatePassport(passport, True)
+            valid += validate_passport(passport, True)
     print('Part 2 - valid passports:', valid)
 
 
